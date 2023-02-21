@@ -157,3 +157,21 @@
 	position:relative;
 	top:1px;
 }
+/* Style the input box */
+input {
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the input box when it is focused */
+input:focus {
+  border-color: #00bfff;
+  outline: none;
+}
+
+/* Style the placeholder text */
+input::placeholder {
+  color: #999;
+}

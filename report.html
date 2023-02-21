@@ -45,31 +45,27 @@ tbody tr:hover {
     <h1 class="brand"><span>Tiffin</span> management system</h1>
     <div class="wrapper">
       <div class="company-info">
-       
-        <h1>Today's tiffins</h1>
-        <h3>With Dalbhat : <span id="WithDalbhat"></span></h3>
-        <h3>Without Dalbhat : <span id="WithoutDalbhat"></span></h3>
+        <label>From Date</label>
+        <br />
+        <input type="date" name="fromDate" id="fromDate" placeholder="Select from date" />
+        <br />
+        <label>To Date</label>
+        <br />
+        <input type="date" name="toDate" id="toDate" placeholder="Select to date" />
 
-        <select name="name" id="name" onchange="getTotal(this.value)" required>
-            <option>Select</option>
-        </select>
-        <h3>Total : <span id="indeTotal"></span></h3>
+        <button class="btn" onclick="filter()">Filter</button>
       </div>
       <div class="contact" id="view">
-        <table id="myTable">
+        <table id="myTable2">
             <thead>
               <tr>
-                <th>Date</th>
                 <th>Name</th>
-                <th>Price</th>
+                <th>Total</th>
+                <th>Count</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td> <h3>Total :</h3></td>
-                <td id="total"></td>
-              </tr>
+              
               <!-- <tr>
                 <td>21-02-2023</td>
                 <td>Jaydeep</td>
@@ -87,15 +83,6 @@ tbody tr:hover {
 </body>
 </html>
 <script>
-    readMessage()
-    let ArrayData = ["AKASH MISHRA","DEVDAS KINDERKHEDIYA","HARSH NIRMAL","JAYDIP UPADHAYAY","KULDEEP","PARTH VAMJA","PRSHANT RAI","SAGAR BAGIYA","SANJAY PARMAR","TEJAS CHAUHAN","YASH SAHU","UMANAG SHAH","PREM RAJAK","DARSHIT VAGASHIYA","RISHABH SIYOTE"]
-
-    for (let i = 0; i < ArrayData.length; i++) {
-            var option = document.createElement("option");
-            option.text = ArrayData[i];
-            option.value = ArrayData[i];
-            var select = document.getElementById("name");
-            select.appendChild(option);
-
-        }
+    
+    loadReport()
 </script>
