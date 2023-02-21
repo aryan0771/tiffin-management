@@ -26,7 +26,6 @@ async function submitForm(e) {
     console.log(e)
     var name = document.getElementById("name").value;
     var tiffin = document.getElementById("tiffin").value;
-    console.log(name,tiffin)
     if (name === null || name == "" || name === undefined || name=="Select") {
         alert("Please select name")
         return
