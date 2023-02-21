@@ -50,11 +50,6 @@ tbody tr:hover {
 
         <select name="name" id="name" onchange="getTotal(this.value)" required>
             <option>Select</option>
-
-            <option value="JAYDEEP UPADHYAY">JAYDEEP  UPADHYAY</option>
-            <option value="AKASH MISHRA">AKASH MISHRA</option>
-            <option value="PARTH VAMJA">PARTH VAMJA</option>
-            <option value="YASH SHAHU">YASH SHAHU</option>
         </select>
         <h3>Total : <span id="indeTotal"></span></h3>
       </div>
@@ -91,4 +86,14 @@ tbody tr:hover {
 </html>
 <script>
     readMessage()
+    let ArrayData = ["AKASH MISHRA","DEVDAS KINDERKHEDIYA","HARSH NIRMAL","JAYDIP UPADHAYAY","KULDEEP","PARTH VAMJA","PRSHANT RAI","SAGAR BAGIYA","SANJAY PARMAR","TEJAS CHAUHAN","YASH SAHU","UMANAG SHAH","PREM RAJAK","DARSHIT VAGASHIYA","RISHABH SIYOTE"]
+
+    for (let i = 0; i < ArrayData.length; i++) {
+            var option = document.createElement("option");
+            option.text = ArrayData[i];
+            option.value = ArrayData[i];
+            var select = document.getElementById("name");
+            select.appendChild(option);
+
+        }
 </script>
