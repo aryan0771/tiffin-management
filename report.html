@@ -56,6 +56,7 @@ tbody tr:hover {
         <button class="btn" onclick="filter()">Filter</button>
       </div>
       <div class="contact" id="view">
+        <a href="./index.html" class="btn" style="float: right; margin-bottom: 3px;">Back to form</a>
         <table id="myTable2">
             <thead>
               <tr>
@@ -66,11 +67,11 @@ tbody tr:hover {
             </thead>
             <tbody>
               
-              <!-- <tr>
-                <td>21-02-2023</td>
-                <td>Jaydeep</td>
-                <td>80</td>
-              </tr> -->
+              <tr>
+                <td></td>
+                <td><h3>Total :</h3></td>
+                <td><span id="indeTotal"></span></td>
+              </tr>
             </tbody>
           </table>
           
@@ -83,6 +84,6 @@ tbody tr:hover {
 </body>
 </html>
 <script>
-    
+    getAllTotal("2020-01-01","2050-01-01")
     loadReport()
 </script>

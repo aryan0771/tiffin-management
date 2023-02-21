@@ -149,7 +149,25 @@ function getTotal(value) {
 
     });
 }
+function getAllTotal(fromDate,toDate) {
+    messagesRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        let total = 0;
+        let count = 0;
+        for (let i in data) {
+            let checkDate = new Date(data[i].date)
+            let startDate = new Date(fromDate) 
+            let endDate = new Date(toDate)
+            //Count daily's tiffin
+            if (checkDate.getTime() >= startDate.getTime() && checkDate.getTime() <= endDate.getTime()) {
+                total = parseInt(total) + parseInt(data[i].tiffin);
+                count = count + 1
+            }
+        }
+        document.getElementById("indeTotal").innerHTML = total + "<span> (" + count + " Tiffins)</span>";
 
+    });
+}
 function storeInLocal(){
     messagesRef.on('value', (snapshot) => {
         const data = snapshot.val();
@@ -310,6 +328,7 @@ function filter(){
         localStorage.setItem("data",JSON.stringify(data))
 
     });
+    getAllTotal(fromDate,toDate)
     const data = [
         {
             name:"AKASH MISHRA",
