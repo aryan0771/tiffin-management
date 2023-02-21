@@ -21,22 +21,25 @@ document.getElementById('contactForm').addEventListener('submit', submitForm);
 
 // Submit form
 async function submitForm(e) {
-
+    e.preventDefault();
+    // Get values
+    console.log(e)
+    var name = document.getElementById("name").value;
+    var tiffin = document.getElementById("tiffin").value;
+    console.log(name,tiffin)
+    if (name === null || name == "" || name === undefined || name=="Select") {
+        alert("Please select name")
+        return
+    }
+    if (tiffin === null || tiffin == "" || tiffin === undefined || tiffin == "Select") {
+        alert("Please select tiffin")
+        return
+    }
     //take confirmation
     if (!confirm('Are you sure you want to submit?')) {
         return
     }
-    e.preventDefault();
-    // Get values
-    var name = getInputVal('name');
-    var tiffin = getInputVal('tiffin');
-
-    if (name === null || name == "" || name === undefined) {
-        return
-    }
-    if (tiffin === null || tiffin == "" || tiffin === undefined) {
-        return
-    }
+    
 
     // Save message
     await saveMessage(name, tiffin);
