@@ -114,7 +114,7 @@ function loadUsers() {
         console.log(data)
         
         for (let i in data) {
-            if (Array.indexOf(data[i].name) !== -1 && new Date().toISOString().slice(0, 10)) {
+            if (Array.indexOf(data[i].name) !== -1 && new Date().toISOString().slice(0, 10) == data[i].date) {
                 //alert("Yes, the value exists!")
                 Array = Array.filter(element => element !== data[i].name);
             }
